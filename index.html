@@ -2,19 +2,49 @@
 <html>
   <head>
     <title>Cookie Stand</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link type = "text/css" href = "style.css" rel = "stylesheet">
   </head>
   <body>
-    <h1>Cookie Stand</h1>
-    <h3 id="storePS"></h3>
-    <ul id="hourPS"></ul>
-    <h3 id="storePA"></h3>
-    <ul id="hourPA"></ul>
-    <h3 id="storeWS"></h3>
-    <ul id="hourWS"></ul>
-    <h3 id="storeSW"></h3>
-    <ul id="hourSW"></ul>
-    <h3 id="storePD"></h3>
-    <ul id="hourPD"></ul>
-    <script type = "text/javascript" src = "salmon-cookies-literal.js"></script>
+    <div class = "wrapper">
+      <header id = "header">
+        <h1>Pat's Cookie Stand</h1>
+        <img src = "img/215px-Fish_icon.svg.png" alt = "fish logo">
+      </header>
+      <nav>
+        <ul class = "main-nav">
+          <li id = "stores">Stores</li>
+              <ul class = "stores-nav">
+                <li><a href="#PS">Pioneer Square</a></li>
+                <li><a href="#PA">Portland Airport</a></li>
+                <li><a href="#WS">Washington Square</a></li>
+                <li><a href="#SW">Sellwood</a></li>
+                <li><a href="#PD">Pearl District</a></li>
+      </nav>
+      <section class = "stores-section">
+        <section id = "PS">
+          <h3 id="storePS"></h3>
+          <ul id="hourPS"></ul>
+        </section>
+        <section id = "PA">
+          <h3 id="storePA"></h3>
+          <ul id="hourPA"></ul>
+        </section>
+        <section id = "WS">
+          <h3 id="storeWS"></h3>
+          <ul id="hourWS"></ul>
+        </section>
+        <section id = "SW">
+          <h3 id="storeSW"></h3>
+          <ul id="hourSW"></ul>
+        </section>
+        <section id = "PD">
+          <h3 id="storePD"></h3>
+          <ul id="hourPD"></ul>
+        </section>
+      </section>
+      <a href = "#header">Return to top</a>
+      <script type = "text/javascript" src = "salmon-cookies-literal.js"></script>
+  </div>
   </body>
 </html>

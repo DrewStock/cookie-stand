@@ -1,0 +1,68 @@
+body {
+  background-color: rgba(213, 215, 226, 0.75);
+}
+
+.wrapper {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 10px;
+}
+
+header {
+  background-color: rgba(231, 189, 193, 0.75);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+header h1 {
+  display: inline;
+  vertical-align: middle;
+}
+
+header img {
+  vertical-align: middle;
+  margin: 0 0 0 15px;
+}
+
+.nav {
+  list-style-type: none;
+}
+
+h1,h2,h3 {
+    font-family: 'Lato', sans-serif;
+}
+
+.stores-section {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(254, 253, 240, 0.75);
+  border-radius: 5px;
+}
+
+#stores {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.main-nav {
+  font-family: 'Lato', sans-serif;
+  list-style: none;
+}
+
+.stores-nav {
+  font-size: 20px;
+  list-style: none;
+  font-family: 'Lato', sans-serif;
+}
+
+a:hover {
+  background-color: rgba(243, 243, 243, 1);
+}
+
+a {
+  padding: 5px;
+  text-decoration: none;
+}
+
+li {
+  margin: 10px 0;
+}
