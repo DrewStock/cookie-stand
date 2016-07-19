@@ -1,0 +1,51 @@
+body {
+  background-color: #ddd;
+}
+
+.guide {
+  width: 70%;
+  padding: 10px;
+  margin: auto;
+  background-color: #fff;
+}
+
+h1, h2, h3 {
+  font-family: 'Lato', sans-serif;
+  margin-top: 10px;
+  color: rgb(21, 22, 30);
+}
+
+p {
+  font-family: Times, serif:
+}
+
+p.body {
+  font-family: Georgia, serif;
+  color: rgb(10, 11, 15);
+}
+
+p.data {
+  font-family: Helvetica, sans-serif;
+  color: rgb(42, 45, 60);
+}
+
+.colors {
+  width: 25%;
+  border: 1px solid #000;
+  display: inline-block;
+  padding: 25px;
+  text-align: center;
+  margin: 5px 5px;
+}
+
+#colorOne {
+  background-color: rgb(254, 253, 240);
+}
+
+#colorTwo {
+  background-color: rgb(231, 189, 193);
+}
+
+#colorThree {
+  background-color: rgb(213, 215, 226);
+}

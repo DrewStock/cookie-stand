@@ -1,16 +1,19 @@
 body {
-  background-color: rgba(213, 215, 226, 0.75);
+  background-color: rgb(213, 215, 226);
 }
 
 .wrapper {
   font-family: Helvetica, Arial, sans-serif;
-  margin: 10px;
+  margin: auto;
+  color: rgb(42, 45, 60);
+  width: 85%;
 }
 
 header {
-  background-color: rgba(231, 189, 193, 0.75);
+  background-color: rgb(231, 189, 193);
   padding: 10px;
   border-radius: 5px;
+  margin-top: 20px;
 }
 
 header h1 {
@@ -29,12 +32,13 @@ header img {
 
 h1,h2,h3 {
     font-family: 'Lato', sans-serif;
+    color: rgb(21, 22, 30);
 }
 
 .stores-section {
   padding: 10px;
   margin: 10px;
-  background-color: rgba(254, 253, 240, 0.75);
+  background-color: rgb(254, 253, 240);
   border-radius: 5px;
 }
 
@@ -65,4 +69,9 @@ a {
 
 li {
   margin: 10px 0;
+  list-style-type: none;
+}
+
+footer {
+  font-family: 'Lato', sans-serif;
 }

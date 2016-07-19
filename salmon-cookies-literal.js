@@ -3,45 +3,55 @@
 
 // Create 'storeOne' object
 var storeOne = {
-  name: 'Pioneer Square',
+  name: "Pioneer Square",
   customerMin: 17,
   customerMax: 88,
   customerCookieAvg: 5.2,
+  // Create array 'arr' to store cookie sales for each hour of the business day
   arr: [],
   total: 0,
+  // Create array 'time' to store business hours
+  time: ["10:00 AM ","11:00 AM ","12:00 PM ","1:00 PM ","2:00 PM ","3:00 PM ","4:00 PM ","5:00 PM "],
+  // Function call to generate random number of customers per hour
   generateRandom: function(customerMin, customerMax) {
     return Math.floor(Math.random() * (customerMax - customerMin)) + customerMin;
   },
+  // Function call to generate cookie sales per hour
   cookiesPerHour: function() {
     var customersPerHour = this.generateRandom(this.customerMin, this.customerMax);
     return Math.round(customersPerHour * this.customerCookieAvg);
   },
+  // Function call to push hourly cookie sales into array 'arr'
   dailyCookies: function() {
     for (i = 0; i < 8; i++) {
       this.arr.push(this.cookiesPerHour());
     }
   },
+  // Function call to create new elements ('h3','ul','li') and text nodes, then add new elements and text nodes into document using DOM manipulation
   addInfo:  function() {
-    var store = document.getElementById("storePS");
-    var storeName = this.name;
-    store.innerHTML += storeName;
+    var newNameElement = document.createElement("h3");
+    var newNameText = document.createTextNode(this.name);
+    newNameElement.appendChild(newNameText);
+    var positionName = document.getElementById("PS");
+    positionName.appendChild(newNameElement);
     this.dailyCookies();
-    var hour = document.getElementById("hourPS");
-    var unitsPerHour = "<li>" + "10am: " + this.arr[0] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "11am: " + this.arr[1] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "12pm: " + this.arr[2] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "1pm: " + this.arr[3] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "2pm: " + this.arr[4] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "3pm: " + this.arr[5] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "4pm: " + this.arr[6] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "5pm: " + this.arr[7] + " cookies" + "</li>";
-    hour.innerHTML += unitsPerHour;
-    for (var i = 0; i < this.arr.length; i++) {
-      this.total += this.arr[i];
+    var newUl = document.createElement("ul");
+    var positionUl = document.getElementById("PS");
+    positionUl.appendChild(newUl);
+    var getUl = document.getElementById("PS").firstChild.nextSibling.nextSibling;
+    getUl.id = "hourPS";
+    for (var j = 0; j < this.arr.length; j++) {
+      var newHourElement = document.createElement("li");
+      var newHourText = document.createTextNode(this.time[j] + ": " + this.arr[j] + " cookies");
+      newHourElement.appendChild(newHourText);
+      var positionHour = document.getElementById("hourPS");
+      positionHour.appendChild(newHourElement);
+      this.total += this.arr[j];
     }
-    var sum = document.getElementById("hourPS");
-    var total = this.total;
-    sum.innerHTML += "<li>" + "Total: " + total + "</li>";
+    var totalElement = document.createElement("li");
+    var total = document.createTextNode("Total Daily Sales : " + this.total + " cookies");
+    totalElement.appendChild(total);
+    positionHour.appendChild(totalElement);
   }
 }
 
@@ -53,6 +63,7 @@ var storeTwo = {
   customerCookieAvg: 1.2,
   arr: [],
   total: 0,
+  time: ["10:00 AM ","11:00 AM ","12:00 PM ","1:00 PM ","2:00 PM ","3:00 PM ","4:00 PM ","5:00 PM "],
   generateRandom: function(customerMin, customerMax) {
     return Math.floor(Math.random() * (customerMax - customerMin)) + customerMin;
   },
@@ -66,28 +77,32 @@ var storeTwo = {
     }
   },
   addInfo:  function() {
-    var store = document.getElementById("storePA");
-    var storeName = this.name;
-    store.innerHTML += storeName;
+    var newNameElement = document.createElement("h3");
+    var newNameText = document.createTextNode(this.name);
+    newNameElement.appendChild(newNameText);
+    var positionName = document.getElementById("PA");
+    positionName.appendChild(newNameElement);
     this.dailyCookies();
-    var hour = document.getElementById("hourPA");
-    var unitsPerHour = "<li>" + "10am: " + this.arr[0] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "11am: " + this.arr[1] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "12pm: " + this.arr[2] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "1pm: " + this.arr[3] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "2pm: " + this.arr[4] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "3pm: " + this.arr[5] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "4pm: " + this.arr[6] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "5pm: " + this.arr[7] + " cookies" + "</li>";
-    hour.innerHTML += unitsPerHour;
-    for (var i = 0; i < this.arr.length; i++) {
-      this.total += this.arr[i];
+    var newUl = document.createElement("ul");
+    var positionUl = document.getElementById("PA");
+    positionUl.appendChild(newUl);
+    var getUl = document.getElementById("PA").firstChild.nextSibling.nextSibling;
+    getUl.id = "hourPA";
+    for (var j = 0; j < this.arr.length; j++) {
+      var newHourElement = document.createElement("li");
+      var newHourText = document.createTextNode(this.time[j] + ": " + this.arr[j] + " cookies");
+      newHourElement.appendChild(newHourText);
+      var positionHour = document.getElementById("hourPA");
+      positionHour.appendChild(newHourElement);
+      this.total += this.arr[j];
     }
-    var sum = document.getElementById("hourPA");
-    var total = this.total;
-    sum.innerHTML += "<li>" + "Total: " + total + "</li>";
+    var totalElement = document.createElement("li");
+    var total = document.createTextNode("Total Daily Sales : " + this.total + " cookies");
+    totalElement.appendChild(total);
+    positionHour.appendChild(totalElement);
   }
 }
+
 
 // Create 'storeThree' object
 var storeThree = {
@@ -97,6 +112,7 @@ var storeThree = {
   customerCookieAvg: 1.9,
   arr: [],
   total: 0,
+  time: ["10:00 AM ","11:00 AM ","12:00 PM ","1:00 PM ","2:00 PM ","3:00 PM ","4:00 PM ","5:00 PM "],
   generateRandom: function(customerMin, customerMax) {
     return Math.floor(Math.random() * (customerMax - customerMin)) + customerMin;
   },
@@ -110,26 +126,29 @@ var storeThree = {
     }
   },
   addInfo:  function() {
-    var store = document.getElementById("storeWS");
-    var storeName = this.name;
-    store.innerHTML += storeName;
+    var newNameElement = document.createElement("h3");
+    var newNameText = document.createTextNode(this.name);
+    newNameElement.appendChild(newNameText);
+    var positionName = document.getElementById("WS");
+    positionName.appendChild(newNameElement);
     this.dailyCookies();
-    var hour = document.getElementById("hourWS");
-    var unitsPerHour = "<li>" + "10am: " + this.arr[0] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "11am: " + this.arr[1] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "12pm: " + this.arr[2] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "1pm: " + this.arr[3] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "2pm: " + this.arr[4] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "3pm: " + this.arr[5] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "4pm: " + this.arr[6] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "5pm: " + this.arr[7] + " cookies" + "</li>";
-    hour.innerHTML += unitsPerHour;
-    for (var i = 0; i < this.arr.length; i++) {
-      this.total += this.arr[i];
+    var newUl = document.createElement("ul");
+    var positionUl = document.getElementById("WS");
+    positionUl.appendChild(newUl);
+    var getUl = document.getElementById("WS").firstChild.nextSibling.nextSibling;
+    getUl.id = "hourWS";
+    for (var j = 0; j < this.arr.length; j++) {
+      var newHourElement = document.createElement("li");
+      var newHourText = document.createTextNode(this.time[j] + ": " + this.arr[j] + " cookies");
+      newHourElement.appendChild(newHourText);
+      var positionHour = document.getElementById("hourWS");
+      positionHour.appendChild(newHourElement);
+      this.total += this.arr[j];
     }
-    var sum = document.getElementById("hourWS");
-    var total = this.total;
-    sum.innerHTML += "<li>" + "Total: " + total + "</li>";
+    var totalElement = document.createElement("li");
+    var total = document.createTextNode("Total Daily Sales : " + this.total + " cookies");
+    totalElement.appendChild(total);
+    positionHour.appendChild(totalElement);
   }
 }
 
@@ -141,6 +160,7 @@ var storeFour = {
   customerCookieAvg: 3.3,
   arr: [],
   total: 0,
+  time: ["10:00 AM ","11:00 AM ","12:00 PM ","1:00 PM ","2:00 PM ","3:00 PM ","4:00 PM ","5:00 PM "],
   generateRandom: function(customerMin, customerMax) {
     return Math.floor(Math.random() * (customerMax - customerMin)) + customerMin;
   },
@@ -154,26 +174,29 @@ var storeFour = {
     }
   },
   addInfo:  function() {
-    var store = document.getElementById("storeSW");
-    var storeName = this.name;
-    store.innerHTML += storeName;
+    var newNameElement = document.createElement("h3");
+    var newNameText = document.createTextNode(this.name);
+    newNameElement.appendChild(newNameText);
+    var positionName = document.getElementById("SW");
+    positionName.appendChild(newNameElement);
     this.dailyCookies();
-    var hour = document.getElementById("hourSW");
-    var unitsPerHour = "<li>" + "10am: " + this.arr[0] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "11am: " + this.arr[1] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "12pm: " + this.arr[2] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "1pm: " + this.arr[3] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "2pm: " + this.arr[4] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "3pm: " + this.arr[5] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "4pm: " + this.arr[6] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "5pm: " + this.arr[7] + " cookies" + "</li>";
-    hour.innerHTML += unitsPerHour;
-    for (var i = 0; i < this.arr.length; i++) {
-      this.total += this.arr[i];
+    var newUl = document.createElement("ul");
+    var positionUl = document.getElementById("SW");
+    positionUl.appendChild(newUl);
+    var getUl = document.getElementById("SW").firstChild.nextSibling.nextSibling;
+    getUl.id = "hourSW";
+    for (var j = 0; j < this.arr.length; j++) {
+      var newHourElement = document.createElement("li");
+      var newHourText = document.createTextNode(this.time[j] + ": " + this.arr[j] + " cookies");
+      newHourElement.appendChild(newHourText);
+      var positionHour = document.getElementById("hourSW");
+      positionHour.appendChild(newHourElement);
+      this.total += this.arr[j];
     }
-    var sum = document.getElementById("hourSW");
-    var total = this.total;
-    sum.innerHTML += "<li>" + "Total: " + total + "</li></ul>";
+    var totalElement = document.createElement("li");
+    var total = document.createTextNode("Total Daily Sales : " + this.total + " cookies");
+    totalElement.appendChild(total);
+    positionHour.appendChild(totalElement);
   }
 }
 
@@ -185,6 +208,7 @@ var storeFive = {
   customerCookieAvg: 2.6,
   arr: [],
   total: 0,
+  time: ["10:00 AM ","11:00 AM ","12:00 PM ","1:00 PM ","2:00 PM ","3:00 PM ","4:00 PM ","5:00 PM "],
   generateRandom: function(customerMin, customerMax) {
     return Math.floor(Math.random() * (customerMax - customerMin)) + customerMin;
   },
@@ -198,26 +222,29 @@ var storeFive = {
     }
   },
   addInfo:  function() {
-    var store = document.getElementById("storePD");
-    var storeName = this.name;
-    store.innerHTML += storeName;
+    var newNameElement = document.createElement("h3");
+    var newNameText = document.createTextNode(this.name);
+    newNameElement.appendChild(newNameText);
+    var positionName = document.getElementById("PD");
+    positionName.appendChild(newNameElement);
     this.dailyCookies();
-    var hour = document.getElementById("hourPD");
-    var unitsPerHour = "<li>" + "10am: " + this.arr[0] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "11am: " + this.arr[1] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "12pm: " + this.arr[2] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "1pm: " + this.arr[3] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "2pm: " + this.arr[4] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "3pm: " + this.arr[5] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "4pm: " + this.arr[6] + " cookies" + "</li>";
-    unitsPerHour += "<li>" + "5pm: " + this.arr[7] + " cookies" + "</li>";
-    hour.innerHTML += unitsPerHour;
-    for (var i = 0; i < this.arr.length; i++) {
-      this.total += this.arr[i];
+    var newUl = document.createElement("ul");
+    var positionUl = document.getElementById("PD");
+    positionUl.appendChild(newUl);
+    var getUl = document.getElementById("PD").firstChild.nextSibling.nextSibling;
+    getUl.id = "hourPD";
+    for (var j = 0; j < this.arr.length; j++) {
+      var newHourElement = document.createElement("li");
+      var newHourText = document.createTextNode(this.time[j] + ": " + this.arr[j] + " cookies");
+      newHourElement.appendChild(newHourText);
+      var positionHour = document.getElementById("hourPD");
+      positionHour.appendChild(newHourElement);
+      this.total += this.arr[j];
     }
-    var sum = document.getElementById("hourPD");
-    var total = this.total;
-    sum.innerHTML += "<li>" + "Total: " + total + "</li>";
+    var totalElement = document.createElement("li");
+    var total = document.createTextNode("Total Daily Sales : " + this.total + " cookies");
+    totalElement.appendChild(total);
+    positionHour.appendChild(totalElement);
   }
 }
 
