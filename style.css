@@ -35,7 +35,7 @@ h1,h2,h3 {
     color: rgb(21, 22, 30);
 }
 
-.stores-section {
+#stores-section {
   padding: 10px;
   margin: 10px;
   background-color: rgb(254, 253, 240);

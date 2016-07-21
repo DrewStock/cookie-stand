@@ -18,3 +18,7 @@ Cookie Stand is an exercise in domain modeling. The application models customer 
 * Version 1.1
   * Created style-guide.html to list the styles that are to be used for the Cookie Stand document
   * Refactored salmon-cookies-literal.js to create new elements and text nodes and then add these into the document using DOM manipulation
+* Version 1.2
+  * Created new JavaScript file, salmon-cookies-constructor.js
+    * As the name implies, salmon-cookies-constructor.js uses an object constructor function to create each store object
+    
