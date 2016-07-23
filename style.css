@@ -1,12 +1,21 @@
 body {
   background-color: rgb(213, 215, 226);
+  width: 90%;
+  margin: auto;
 }
 
-.wrapper {
+.wrapper-header_and_nav {
+  position: fixed;
+  width: 30%;
+}
+
+.wrapper-stores {
   font-family: Helvetica, Arial, sans-serif;
   margin: auto;
   color: rgb(42, 45, 60);
-  width: 85%;
+  float: right;
+  width: 65%;
+  margin-top: 10px;
 }
 
 header {
@@ -31,8 +40,8 @@ header img {
 }
 
 h1,h2,h3 {
-    font-family: 'Lato', sans-serif;
-    color: rgb(21, 22, 30);
+  font-family: 'Lato', sans-serif;
+  color: rgb(21, 22, 30);
 }
 
 #stores-section {
@@ -50,21 +59,31 @@ h1,h2,h3 {
 .main-nav {
   font-family: 'Lato', sans-serif;
   list-style: none;
+  padding: 0;
 }
 
 .stores-nav {
   font-size: 20px;
   list-style: none;
   font-family: 'Lato', sans-serif;
+  padding: 0 15px;
 }
 
 a:hover {
   background-color: rgba(243, 243, 243, 1);
+  text-decoration: underline;
+  border: 1px solid #a0a8aa;
+  border-radius: 5px;
+}
+
+a:visited {
+  color:  rgb(21, 22, 30);
 }
 
 a {
   padding: 5px;
   text-decoration: none;
+  color:  rgb(21, 22, 30);
 }
 
 li {
@@ -77,23 +96,23 @@ footer {
 }
 
 table {
-    width: 60%;
-    margin: 50px auto;
-    font-size: 20px;
-    border-spacing: 0;
-    background-color: rgb(250, 250, 250);
-    border: 2px solid #a0a8aa;
-    border-radius: 5px;
-    box-shadow: 0 0 3px hsla(0,0%,20%,0.75);
+  width: 60%;
+  margin: 50px auto;
+  font-size: 20px;
+  border-spacing: 0;
+  background-color: rgb(250, 250, 250);
+  border: 2px solid #a0a8aa;
+  border-radius: 5px;
+  box-shadow: 0 0 3px hsla(0,0%,20%,0.75);
 }
 
 table tr:nth-of-type(2n + 2) {
-    background-color: rgb(225, 225, 225);
+  background-color: rgb(225, 225, 225);
   }
 
 table tr:first-of-type {
-    font-size: 30px;
-    font-weight: bold;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 td {
@@ -106,4 +125,15 @@ th {
   padding: 5px;
   text-align: center;
   border-bottom: 2px solid #a0a8aa;
+}
+
+#stores-section tr:hover {
+  color: #fff;
+  background-color: rgb(0, 0, 0);
+}
+
+.tagline {
+  font-size: 20px;
+  font-family: Georgia, serif;
+  color: rgb(10, 11, 15);
 }

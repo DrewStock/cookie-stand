@@ -21,4 +21,10 @@ Cookie Stand is an exercise in domain modeling. The application models customer 
 * Version 1.2
   * Created new JavaScript file, salmon-cookies-constructor.js
     * As the name implies, salmon-cookies-constructor.js uses an object constructor function to create each store object
-    
+    * Updated the output of the script to add store object data to document as tables, using DOM manipulation
+  * Updated styling (in style.css) of index.html
+    * Header and nav have fixed positioning
+    * Tables have different colors for alternating rows
+    * When user hovers over a table row, the background color changes for enhanced contrast
+  * Updated style guide
+    * New colors added for table rows and table hover state

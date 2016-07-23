@@ -1,3 +1,5 @@
+
+// Object constructor function
 var SalmonCookieStore = function(storeName, storeId, customerMin, customerMax, customerCookieAvg) {
   this.storeName = storeName;
   this.storeId = storeId;
@@ -24,13 +26,13 @@ var SalmonCookieStore = function(storeName, storeId, customerMin, customerMax, c
       this.cookiesSoldEachHour.push(this.cookiesPerHour());
     }
   };
-  // Function call to create new elements ('table','tr','th','td') and text nodes, then add new elements and text nodes into document using DOM manipulation
+  // Function to create new elements ('table','tr','th','td') and text nodes, then add new elements and text nodes into document using DOM manipulation
   this.addInfo = function() {
     var positionSS = document.getElementById("stores-section");
     var newTable = document.createElement("table");
     newTable.id = this.storeId;
     positionSS.appendChild(newTable);
-    // Add Table Header
+    // Creates table header
     var table = document.getElementById(this.storeId);
     var tableHeader = document.createElement("tr");
     var tableHeaderCell = document.createElement("th");
@@ -39,9 +41,9 @@ var SalmonCookieStore = function(storeName, storeId, customerMin, customerMax, c
     tableHeaderCell.appendChild(storeNameHeader);
     tableHeader.appendChild(tableHeaderCell);
     table.appendChild(tableHeader);
-    // Add Column Headers
+    // Creates column headers
     var tableHeaderRow = document.createElement("tr");
-    var tableHeaderCell = document.createElement("th");
+    tableHeaderCell = document.createElement("th");
     var tableHeaderData = document.createTextNode("Timeslot")
     tableHeaderCell.appendChild(tableHeaderData);
     tableHeaderRow.appendChild(tableHeaderCell);
@@ -49,8 +51,8 @@ var SalmonCookieStore = function(storeName, storeId, customerMin, customerMax, c
     tableHeaderData = document.createTextNode("Cookies Sold")
     tableHeaderCell.appendChild(tableHeaderData);
     tableHeaderRow.appendChild(tableHeaderCell);
-    var positionRow = document.getElementById(this.storeId);
-    positionRow.appendChild(tableHeaderRow);
+    table.appendChild(tableHeaderRow);
+    // Creates table rows and table data cells for store object, then adds hourly timeslots, cookies sold per hour and daily total
     for (var j = 0; j < this.cookiesSoldEachHour.length; j++) {
       var newCookieRow = document.createElement("tr");
       var timeCell = document.createElement("td");
@@ -61,8 +63,7 @@ var SalmonCookieStore = function(storeName, storeId, customerMin, customerMax, c
       var cookieCellData = document.createTextNode(this.cookiesSoldEachHour[j]);
       cookieCell.appendChild(cookieCellData);
       newCookieRow.appendChild(cookieCell);
-      var positionRow = document.getElementById(this.storeId);
-      positionRow.appendChild(newCookieRow);
+      table.appendChild(newCookieRow);
       this.cookiesSoldEachDay += this.cookiesSoldEachHour[j];
     }
     var totalRow = document.createElement("tr");
@@ -74,10 +75,11 @@ var SalmonCookieStore = function(storeName, storeId, customerMin, customerMax, c
     var totalNumberCellData = document.createTextNode(this.cookiesSoldEachDay);
     totalNumberCell.appendChild(totalNumberCellData);
     totalRow.appendChild(totalNumberCell);
-    positionRow.appendChild(totalRow);
+    table.appendChild(totalRow);
   };
 };
 
+// Create array 'chain' to store the properties of each store location
 var chain = [
   new SalmonCookieStore("Pioneer Square", "PS", 17, 88, 5.2),
   new SalmonCookieStore("Portland Airport", "PA", 6, 24, 1.2),
@@ -86,6 +88,7 @@ var chain = [
   new SalmonCookieStore("Pearl District", "PD", 3, 24, 2.6),
 ];
 
+// Loop through the 'chain' array to call functions
 for (var index = 0; index < chain.length; index++) {
     var currentStore = chain[index];
     currentStore.generateRandom();
