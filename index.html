@@ -16,22 +16,39 @@
         <ul class="main-nav">
           <li id="stores">Stores</li>
             <ul class="stores-nav">
-              <li><a href="#PS">Pioneer Square</a></li>
-              <li><a href="#PA">Portland Airport</a></li>
-              <li><a href="#WS">Washington Square</a></li>
-              <li><a href="#SW">Sellwood</a></li>
-              <li><a href="#PD">Pearl District</a></li>
+              <li><a href="#Pioneer Square">Pioneer Square</a></li>
+              <li><a href="#Portland Airport">Portland Airport</a></li>
+              <li><a href="#Washington Square">Washington Square</a></li>
+              <li><a href="#Sellwood">Sellwood</a></li>
+              <li><a href="#Pearl District">Pearl District</a></li>
             </ul><!-- class="stores-nav" -->
           </li><!-- id="stores" -->
         </ul><!-- class="main-nav"-->
       </nav>
+      <div class="wrapper-form">
+        <section id="form-new_store">
+          <form>
+            <fieldset>
+              <legend>Create New Store</legend>
+              <label class="labels" for="newStoreName">Store Name:</label>
+              <input type="text" id="newStoreName" name="store"><br />
+              <label class="labels" for="newCustomerMinimum">Minimum number of customers per hour:</label><br />
+              <input type="text" id="newCustomerMinimum" name="minimum"><br />
+              <label class="labels" for="newCustomerMaximum">Maximum number of customers per hour:</label><br />
+              <input type="text" id="newCustomerMaximum" name="maximum"><br />
+              <label class="labels" for="newAverageCookies">Average number of cookies purchased per customer:</label><br />
+              <input type="text" id="newAverageCookies" name="average"><br />
+              <input class="button" type="button" value="Creat New Store" onclick="userForm(this.form)">
+            </fieldset>
+          </form>
+        </section>
+      </div><!-- class="wrapper-form" -->
     </div><!-- class="wrapper-header_and_nav"   -->
     <div class="wrapper-stores">
       <section id="stores-section">
       </section><!-- id="stores-section" -->
     </div><!-- class="wrapper-stores" -->
-      <footer>
-      </footer>
+      <footer></footer>
     <script type="text/javascript" src="salmon-cookies-constructor.js"></script>
   </body>
 </html>

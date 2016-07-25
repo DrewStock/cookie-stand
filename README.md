@@ -28,3 +28,7 @@ Cookie Stand is an exercise in domain modeling. The application models customer 
     * When user hovers over a table row, the background color changes for enhanced contrast
   * Updated style guide
     * New colors added for table rows and table hover state
+* Version 1.3
+  * Added form to index.html
+    * Form enables user to input properties for a new store object
+    * Form data is passed to function "userForm" by onclick event of input button, function then adds new store object data to document as a new table 
